@@ -4,8 +4,7 @@ on:
     branches:
       - main
     paths:
-      - /**/*.tsx
-      - /**/*.ts
+      - '**.[tj]sx?'
 jobs:
   lint:
     runs-on:

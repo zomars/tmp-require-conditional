@@ -22,6 +22,8 @@ jobs:
           checks-yaml: |
             - job: lint
               paths:
+                - /**/*.jsx
+                - /**/*.js
                 - /**/*.tsx
                 - /**/*.ts
             - job: check-types
