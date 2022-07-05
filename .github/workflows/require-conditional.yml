@@ -33,7 +33,7 @@ jobs:
                 - /apps/web/**
                 - '!/apps/web/public/static/locales/**'
                 - /packages/**
-                - !/**/*.md
+                - '!/**/*.md'
             - job: e2e-embed
               paths:
                 - /apps/web/**
