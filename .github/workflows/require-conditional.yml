@@ -10,30 +10,34 @@ jobs:
         node: ["16.x"]
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 15
     steps:
       - name: Ensure All Conditional Checks Have Passed
         uses: blend/require-conditional-status-checks@2022.02.04
         with:
+          timeout: 5m
+          github-token: ${{ github.token }}
           interval: 20s
+          # Question marks aren't working
+          # @see https://github.com/blend/require-conditional-status-checks/pull/11
           checks-yaml: |
             - job: lint
               paths:
-                - '**.tsx?'
-                - '**.jsx?'
+                - /**/*.jsx
+                - /**/*.js
+                - /**/*.tsx
+                - /**/*.ts
             - job: check-types
               paths:
-                - '**.tsx?'
+                - /**/*.tsx
+                - /**/*.ts
             - job: e2e
               paths:
-                - apps/web/**
-                - '!apps/web/public/static/locales/**'
-                - packages/**
-                - '!**.md'
+                - /apps/web/**
+                - '!/apps/web/public/static/locales/**'
+                - /packages/**
             - job: e2e-embed
               paths:
-                - apps/web/**
-                - '!apps/web/public/static/locales/**'
-                - packages/**
-                - packages/embeds/**
-                - '!**.md'
+                - /apps/web/**
+                - '!/apps/web/public/static/locales/**'
+                - /packages/**
+                - /packages/embeds/**
