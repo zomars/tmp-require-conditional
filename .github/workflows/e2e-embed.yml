@@ -8,7 +8,6 @@ on:
       - '!/apps/web/public/static/locales/**'
       - /packages/**
       - /packages/embeds/**
-      - '!/**/*.md'
 jobs:
   e2e-embed:
     runs-on:
