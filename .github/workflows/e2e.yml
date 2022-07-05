@@ -4,7 +4,9 @@ on:
     branches:
       - main
     paths:
+      - apps/web/**
       - '!apps/web/public/static/locales/**'
+      - packages/**
       - '!**.md'
 jobs:
   e2e:
