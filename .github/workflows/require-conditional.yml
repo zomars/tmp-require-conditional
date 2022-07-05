@@ -19,7 +19,8 @@ jobs:
           checks-yaml: |
             - job: lint
               paths:
-                - '!**.md'
+                - '**.tsx?'
+                - '**.jsx?'
             - job: check-types
               paths:
                 - '**.tsx?'
