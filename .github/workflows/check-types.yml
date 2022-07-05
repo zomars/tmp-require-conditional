@@ -4,7 +4,8 @@ on:
     branches:
       - main
     paths:
-      - '**.tsx?'
+      - /**/*.tsx
+      - /**/*.ts
 jobs:
   check-types:
     name: Check types
