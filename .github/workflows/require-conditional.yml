@@ -32,12 +32,14 @@ jobs:
                 - /**/*.ts
             - job: e2e
               paths:
-                - /apps/web/**
+                - '!/**/*'
                 - '!/apps/web/public/static/locales/**'
+                - /apps/web/**
                 - /packages/**
             - job: e2e-embed
               paths:
-                - /apps/web/**
+                - '!/**/*'
                 - '!/apps/web/public/static/locales/**'
+                - /apps/web/**
                 - /packages/**
                 - /packages/embeds/**
