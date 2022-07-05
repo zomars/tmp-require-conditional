@@ -4,11 +4,11 @@ on:
     branches:
       - main
     paths:
-      - apps/web/**
-      - '!apps/web/public/static/locales/**'
-      - packages/**
-      - packages/embeds/**
-      - '!**.md'
+      - /apps/web/**
+      - '!/apps/web/public/static/locales/**'
+      - /packages/**
+      - /packages/embeds/**
+      - '!/**/*.md'
 jobs:
   e2e-embed:
     runs-on:
