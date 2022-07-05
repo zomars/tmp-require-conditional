@@ -20,11 +20,11 @@ jobs:
           checks-yaml: |
             - job: lint
               paths:
-                - '**.tsx?'
-                - '**.jsx?'
+                - **.tsx?
+                - **.jsx?
             - job: check-types
               paths:
-                - '**.tsx?'
+                - **.tsx?
             - job: e2e
               paths:
                 - apps/web/**
