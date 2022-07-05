@@ -10,11 +10,12 @@ jobs:
         node: ["16.x"]
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 15
     steps:
       - name: Ensure All Conditional Checks Have Passed
         uses: blend/require-conditional-status-checks@2022.02.04
         with:
+          timeout: 5m
+          github-token: ${{ github.token }}
           interval: 20s
           checks-yaml: |
             - job: lint
